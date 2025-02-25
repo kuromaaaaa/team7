@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "SoundData", menuName = "ScriptableObjects/CreateSoundData")]
+[CreateAssetMenu(fileName = "SoundDataAsset", menuName = "ScriptableObjects/CreateSoundData")]
 public class SoundDataAsset : ScriptableObject
 {
-    public const string PATH = "SoundData";
+    public const string PATH = "SoundDataAsset";
 
     private static SoundDataAsset _entity;
 
