@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : SingletonMonoBehavior<SceneLoader>
 {
+	public event Action OnSceneLoaded;
 	public async UniTask LoadSceneAsync(string sceneName)
 	{
 		await SceneManager.LoadSceneAsync(sceneName);
+		OnSceneLoaded?.Invoke();
 	}
 
 	//FadeInFadeoutができるシーン移動
@@ -18,6 +20,7 @@ public class SceneLoader : SingletonMonoBehavior<SceneLoader>
 			await fade.FadeOutAsync();
 			await LoadSceneAsync(sceneName);
 			await fade.FadeInAsync();
+			OnSceneLoaded?.Invoke();
 		}
 	}
 
