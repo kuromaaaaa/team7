@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 public class NewMonoBehaviourScript : MonoBehaviour
@@ -11,33 +12,38 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     private int[][] _arrayArray = new int[_hight][]
     {
-        new int[_weight] {2, 2, 1, 1, 1, 1, 1, 1, 1, 1 },
-        new int[_weight] { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        new int[_weight] { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        new int[_weight] { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        new int[_weight] { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        new int[_weight] { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        new int[_weight] { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        new int[_weight] { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        new int[_weight] {2, 2, 1, 1, 1, 1, 1, 1, 1, 1 },
-        new int[_weight] { 2, 2, 2, 2, 2, 2, 2, 2, 2, 2},
+        new int[_weight] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        new int[_weight] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        new int[_weight] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        new int[_weight] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        new int[_weight] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        new int[_weight] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        new int[_weight] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        new int[_weight] { 1, 1, 0, 0, 0, 0, 0, 0, 0, 0 },
+        new int[_weight] { 2, 2, 1, 1, 1, 1, 1, 1, 1, 1 },
+        new int[_weight] { 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 },
     };
 
-    private void Start()
+    private async void Start()
     {
-        for (int i = _arrayArray.Length - 1; i >= 0; i--)
+        for (int y = _arrayArray.Length - 1; y >= 0; y--)
         {
-            var array = _arrayArray[i];
-            for (int k = 0; k < array.Length; k++)
+            await UniTask.Delay(10);
+            float py = (_hight - y - 1) * _guildRange;
+
+            var array = _arrayArray[y];
+            for (int x = 0; x < array.Length; x++)
             {
 
-                int targetGuildID = _arrayArray[i][k];
-                if (targetGuildID == 0) return;
+                await UniTask.Delay(10);
+
+                int targetGuildID = _arrayArray[y][x];
+                if (targetGuildID == 0) continue;
                 var sell = Instantiate(_sOSellCenter.SellDataList[targetGuildID].SellGOBJ, _fielfTransform);
-                sell.transform.position = new Vector2(i * _guildRange, k * _guildRange);
-                sell.name = $"{i}:{k}";
+                sell.transform.position = new Vector2(x * _guildRange, py);
+                sell.name = $"{x}:{py}";
             }
-        } 
+        }
     }
 
 
