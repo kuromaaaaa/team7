@@ -12,6 +12,7 @@ public enum AudioClipType
 {
     BGM_Title,
     BGM_Stage,
+    BGM_GameOver,
     BGM_Ending,
     SE_Click,
     SE_Gimmick_Needle,
