@@ -13,7 +13,7 @@ public class SceneLoader : SingletonMonoBehavior<SceneLoader>
 	//FadeInFadeoutができるシーン移動
 	public async UniTask FadeAndLoadSceneAsync(string sceneName)
 	{
-		if (TryFindObjectByType<Fade>(out Fade fade))
+		if (TryGetComponentInChildren<Fade>(out Fade fade))
 		{
 			await fade.FadeOutAsync();
 			await LoadSceneAsync(sceneName);
@@ -21,9 +21,21 @@ public class SceneLoader : SingletonMonoBehavior<SceneLoader>
 		}
 	}
 
+	public void FadeAndLoadSceneAsyncButton(string sceneName)
+	{
+		FadeAndLoadSceneAsync(sceneName);
+	}
+
 	public bool TryFindObjectByType<T>(out T obj) where T : UnityEngine.Object
 	{
 		obj = FindAnyObjectByType<T>();
+		if (obj != null)
+			return true;
+		return false;
+	}
+	public bool TryGetComponentInChildren<T>(out T obj) where T : UnityEngine.Object
+	{
+		obj = GetComponentInChildren<T>();
 		if (obj != null)
 			return true;
 		return false;
