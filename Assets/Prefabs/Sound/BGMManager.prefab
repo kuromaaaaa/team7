@@ -48,6 +48,6 @@ MonoBehaviour:
   _currentBGM: 0
   _duration: 0
   _startVolume: 0.03
-  _inGameVolume: 0.005
+  _inGameVolume: 0.02
   _gameOverVolume: 0.03
   _endingVolume: 0.03
