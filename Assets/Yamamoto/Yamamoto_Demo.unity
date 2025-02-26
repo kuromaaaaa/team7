@@ -318,6 +318,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3878262463243202685, guid: 14d25d639397c0b46a8e13e2b526f9cf, type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5370889200015875237, guid: 14d25d639397c0b46a8e13e2b526f9cf, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -368,7 +372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8562919650175882847, guid: 14d25d639397c0b46a8e13e2b526f9cf, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -776,6 +780,10 @@ PrefabInstance:
     - target: {fileID: 1795288032670170903, guid: 3f4326b540ab7974d904af0b18137715, type: 3}
       propertyPath: m_Name
       value: Potato
+      objectReference: {fileID: 0}
+    - target: {fileID: 2409272457777270708, guid: 3f4326b540ab7974d904af0b18137715, type: 3}
+      propertyPath: _value
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8991320472497627364, guid: 3f4326b540ab7974d904af0b18137715, type: 3}
       propertyPath: m_LocalPosition.x
