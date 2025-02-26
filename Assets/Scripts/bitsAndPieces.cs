@@ -13,5 +13,10 @@ namespace DefaultNamespace
 		{
 			Destroy(gameObject);
 		}
+
+		public void SoundStop()
+		{
+			BGMManager.Instance.StopBGM();
+		}
 	}
 }
