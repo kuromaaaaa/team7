@@ -23,11 +23,13 @@ public class PlayerHP : MonoBehaviour, IDamageable
         if (!_animator) Debug.LogWarning("Animatorをアサインしてください");
     }
 
-    public void TakeDamage()
+    public async void TakeDamage()
     {
+        Debug.LogError("toge");
+        FartGauge.Instance.FartStop = true;
         _currentHp -= _damageValue;
         // 死亡Anim➡初期位置に移動
-        ToInitializePosition().Forget();
+        await ToInitializePosition();
         TakeDamageAction(_currentHp);
     }
 
@@ -51,7 +53,10 @@ public class PlayerHP : MonoBehaviour, IDamageable
     private async UniTask ToInitializePosition()
     {
         if (_animator) _animator.Play(_animName);
-        await UniTask.WaitUntil(() => _animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1);
+        await UniTask.Delay(2000);
+        //await UniTask.WaitUntil(() => _animator.GetCurrentAnimatorStateInfo(0).IsName("IDLE"));
         Initialize?.Invoke();
+        FartGauge.Instance.FartStop = false;
+        _animator.Play("IDLE");
     }
 }

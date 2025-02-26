@@ -2,18 +2,19 @@ using UnityEngine;
 
 public class InitializePlayerPosition : MonoBehaviour
 {
-    private Transform _defaultPosition;
+    private Vector3 _defaultPosition;
     private PlayerHP _playerHp;
 
     private void Start()
     {
-        _defaultPosition = gameObject.transform;
+        _defaultPosition = gameObject.transform.position;
         _playerHp = GetComponent<PlayerHP>();
         _playerHp.Initialize += InitializePosition;
     }
 
     private void InitializePosition()
     {
-        gameObject.transform.position = _defaultPosition.position;
+        Debug.Log(_defaultPosition);
+        gameObject.transform.position = _defaultPosition;
     }
 }

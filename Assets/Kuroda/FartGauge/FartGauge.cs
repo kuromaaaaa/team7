@@ -8,7 +8,9 @@ public class FartGauge : SceneSingletonMonoBehavior<FartGauge>
     private bool _isGameOver = false;
     
     public GameObject Player;
-    
+
+    public bool FartStop = false;
+
     public float GaugeValue
     {
         set

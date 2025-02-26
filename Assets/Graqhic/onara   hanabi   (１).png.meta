@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "onara   hanabi   (\uFF11)_0": 219109812093492500
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
