@@ -1,9 +1,12 @@
 using System;
+using UnityEngine;
 
 public class FartGauge : SceneSingletonMonoBehavior<FartGauge>
 {
     
     private float _gaugeValue;
+
+    public GameObject Player;
     
     public float GaugeValue
     {

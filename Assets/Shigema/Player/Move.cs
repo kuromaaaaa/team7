@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 /// <summary>
@@ -26,6 +27,20 @@ public class Move : MonoBehaviour, PauseManager.IPauseable
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _defaultPower = _power;
         _monitorFartGauge = GameObject.Find("JudgeGauge").gameObject.GetComponent<MonitorFartGauge>();
+        TryAddToDB();
+    }
+
+    private async void TryAddToDB()
+    {
+        await UniTask.Delay(10);
+        if(FartGauge.Instance != null)
+        {
+            FartGauge.Instance.Player = gameObject;
+        }
+        else
+        {
+            TryAddToDB();
+        }
     }
 
     private void Update()
