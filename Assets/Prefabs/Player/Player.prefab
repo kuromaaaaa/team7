@@ -227,7 +227,7 @@ MonoBehaviour:
   _power: 10
   _jumpKey: 32
   _fartConsumption: 0.2
-  _isDebug: 1
+  _isDebug: 0
   _animator: {fileID: 6815992091509334846}
 --- !u!114 &3828418311354047658
 MonoBehaviour:
@@ -391,14 +391,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6246562057362706712, guid: 2811987a1129b2549a322315e5dc6a07, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: a42551413a68580429044d3a5b843181, type: 2}
-    - target: {fileID: 6246562057362706712, guid: 2811987a1129b2549a322315e5dc6a07, type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7074462468504638137, guid: 2811987a1129b2549a322315e5dc6a07, type: 3}
       propertyPath: m_Name
       value: PlayerDoll
@@ -406,10 +398,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7074462468504638137, guid: 2811987a1129b2549a322315e5dc6a07, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1508768606650445503}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2811987a1129b2549a322315e5dc6a07, type: 3}
 --- !u!4 &528400798913163739 stripped
 Transform:
@@ -421,21 +410,3 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 6246562057362706712, guid: 2811987a1129b2549a322315e5dc6a07, type: 3}
   m_PrefabInstance: {fileID: 587574245375128102}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7641185300090052767 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7074462468504638137, guid: 2811987a1129b2549a322315e5dc6a07, type: 3}
-  m_PrefabInstance: {fileID: 587574245375128102}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1508768606650445503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7641185300090052767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca5473abd61aebe4790534ba34bd5bca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _fart: {fileID: 0}

@@ -15,10 +15,14 @@ public class FartGauge : SceneSingletonMonoBehavior<FartGauge>
     {
         set
         {
-            if (value > 1f && !_isGameOver)
+            if (value > 1f)
             {
-                _isGameOver = true;
-                GaugeMax?.Invoke();
+                _gaugeValue = 1f;
+                if (!_isGameOver)
+                {
+                    _isGameOver = true;
+                    GaugeMax?.Invoke();
+                }
             }
             else
             {
