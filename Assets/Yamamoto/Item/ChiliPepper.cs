@@ -10,6 +10,7 @@ public class ChiliPepper : ItemBase
          // todo: 角度を変える速度が速くなる
          // todo: 戻り値あり（もともとのスピード -> originalValueに入れる）。引数に変更後のスピード
          _originalValue = other.GetComponent<Direction>().ChangeRotationSpeed(_speed);
+         _viewFartGauge.GaugeColorChange(Color.red, _length);
     }
 
     protected override void EndAction(Collider2D other)
