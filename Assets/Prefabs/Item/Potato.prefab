@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   updateItem: {fileID: 6072838326629103652}
   _length: 10
+  _value: 0
 --- !u!114 &6072838326629103652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +176,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3894966030105470453, guid: a01493866ff3c2646b61b65de40e693a, type: 3}
+  m_Sprite: {fileID: -3894966030105470453, guid: a2794021e85f02c4a961065272929626, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
