@@ -1,26 +1,9 @@
-using System.Diagnostics;
 using DG.Tweening;
 using UnityEngine;
 
 /// <summary> 全体のBGMを管理しておくクラス </summary>
-public class BGMManager : MonoBehaviour
+public class BGMManager : SingletonMonoBehavior<BGMManager>
 {
-    private static BGMManager _instance;
-    public static BGMManager Instance => _instance;
-    
-    private void Awake()
-    {
-        if (_instance == null)
-        {
-            _instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-    
     [SerializeField, Header("次のBGM")] private AudioClipType _nextBGM = AudioClipType.BGM_Title;
     [SerializeField, Header("現在のBGM")] private AudioClipType _currentBGM;
     [SerializeField, Header("BGMをフェードする場合にかける時間")] private float _duration;
