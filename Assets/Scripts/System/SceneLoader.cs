@@ -71,7 +71,7 @@ public class SceneLoader : SingletonMonoBehavior<SceneLoader>
 				BGMManager.Instance.NextBGM = AudioClipType.BGM_Ending;
 				break;
 			case SceneType.GameOver:
-				BGMManager.Instance.NextBGM = AudioClipType.BGM_Ending;
+				BGMManager.Instance.NextBGM = AudioClipType.BGM_GameOver;
 				break;
 		}
 	}

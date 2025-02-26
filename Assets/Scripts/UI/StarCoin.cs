@@ -15,5 +15,6 @@ public class StarCoin : MonoBehaviour
 		if(view == null)
 			view = FindAnyObjectByType<StarCoinView>();
 		view.GetStarCoin();
+		Destroy(gameObject);
 	}
 }
