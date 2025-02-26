@@ -116,10 +116,10 @@ public class AudioManager
                 if (data.AudioClipType == type)
                 {
                     _audioSource.PlayOneShot(data.AudioClip);
-                    break;
+                    return;
                 }
-                Debug.LogWarning($"{type}のサウンドデータが見つかりません。SoundDataAssetを確認してください");
             }
+            Debug.LogWarning($"{type}のサウンドデータが見つかりません。SoundDataAssetを確認してください");
         }
 
         /// <summary> 停止 </summary>
@@ -159,10 +159,10 @@ public class AudioManager
                 {
                     _audioSource.clip = data.AudioClip;
                     _audioSource.Play();
-                    break;
+                    return;
                 }
-                Debug.LogWarning($"{type}のサウンドデータが見つかりません。SoundDataAssetを確認してください");
             }
+            Debug.LogWarning($"{type}のサウンドデータが見つかりません。SoundDataAssetを確認してください");
         }
 
         /// <summary> 音量のフェード </summary>
