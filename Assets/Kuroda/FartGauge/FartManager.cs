@@ -28,7 +28,12 @@ public class FartManager : MonoBehaviour, PauseManager.IPauseable
     void Update()
     {
         if (!_isPaused && FartGauge.Instance.Player != null)
-            FartGauge.Instance.GaugeValue += fartParSecond * Time.deltaTime;
+        {
+            if (FartGauge.Instance.FartStop == false)
+            {
+                FartGauge.Instance.GaugeValue += fartParSecond * Time.deltaTime;
+            }
+        }
     }
 
     public void Pause()

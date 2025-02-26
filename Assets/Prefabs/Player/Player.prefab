@@ -390,6 +390,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6246562057362706712, guid: 2811987a1129b2549a322315e5dc6a07, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a42551413a68580429044d3a5b843181, type: 2}
+    - target: {fileID: 6246562057362706712, guid: 2811987a1129b2549a322315e5dc6a07, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7074462468504638137, guid: 2811987a1129b2549a322315e5dc6a07, type: 3}
       propertyPath: m_Name
       value: PlayerDoll

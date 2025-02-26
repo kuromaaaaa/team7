@@ -41,8 +41,9 @@ public class ItemBase : MonoBehaviour, PauseManager.IPauseable
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
-        
+
         // todo: sound　アイテムゲット
+        AudioManager.SE.SetVolume(0.05f);
         AudioManager.SE.Play(AudioClipType.SE_Player_ItemGet);
         Action(other);
         Destroy(other).Forget();

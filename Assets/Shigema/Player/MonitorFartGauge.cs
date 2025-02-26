@@ -31,6 +31,7 @@ public class MonitorFartGauge : MonoBehaviour
 
     private void GameOver()
     {
+        Debug.Log("Die");
         if(!_animator) _animator = GameObject.FindWithTag("Player").gameObject.GetComponentInChildren<Animator>();
         ToGameOver().Forget();
     }
