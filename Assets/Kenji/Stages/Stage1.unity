@@ -363,6 +363,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: JudgeGauge
       objectReference: {fileID: 0}
+    - target: {fileID: 7006421737251959343, guid: 379d2df108e43184999bff672a20d8b0, type: 3}
+      propertyPath: _gaugeValue
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

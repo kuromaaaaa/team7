@@ -18,12 +18,11 @@ public class MonitorFartGauge : MonoBehaviour
 
     public bool Judge(float value)
     {
-        var gaugeValue = FartGauge.Instance.GaugeValue;
         // ゲージの残量があればジャンプ可能
-        if (gaugeValue >= value)
+        if (FartGauge.Instance.GaugeValue >= value)
         {
-            gaugeValue -= value;
-            _gaugeValue = gaugeValue;
+            FartGauge.Instance.GaugeValue -= value;
+            _gaugeValue = FartGauge.Instance.GaugeValue;
             return true;
         }
 

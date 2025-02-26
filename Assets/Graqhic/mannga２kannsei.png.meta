@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "mannga\uFF12kannsei_0": 6869484653717723073
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
