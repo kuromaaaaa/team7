@@ -20,6 +20,7 @@ public class PlayerHP : MonoBehaviour, IDamageable
     {
         _currentHp = _maxHp;
         _canToGameOver = true;
+        if (!_animator) Debug.LogWarning("Animatorをアサインしてください");
     }
 
     public void TakeDamage()
@@ -42,14 +43,14 @@ public class PlayerHP : MonoBehaviour, IDamageable
 
     private async UniTask ToGameOver()
     {
-        _animator.Play(_animName);
+        if (_animator) _animator.Play(_animName);
         await UniTask.WaitUntil(() => _animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1);
         await SceneLoader.Instance.FadeAndLoadSceneAsync("GameOver");
     }
 
     private async UniTask ToInitializePosition()
     {
-        _animator.Play(_animName);
+        if (_animator) _animator.Play(_animName);
         await UniTask.WaitUntil(() => _animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1);
         Initialize?.Invoke();
     }

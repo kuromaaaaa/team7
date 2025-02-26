@@ -197,7 +197,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _power: 10
   _jumpKey: 32
-  _gasConsumption: 0.2
+  _fartConsumption: 0.2
 --- !u!114 &3828418311354047658
 MonoBehaviour:
   m_ObjectHideFlags: 0
