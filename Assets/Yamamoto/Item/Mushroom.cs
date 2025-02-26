@@ -12,6 +12,7 @@ public class Mushroom : ItemBase
         var tr = other.GetComponent<Transform>();
         _originalScale = tr.localScale;
         tr.localScale = _scale;
+        _viewFartGauge.GaugeColorChange(Color.cyan, _length);
     }
 
     protected override void EndAction(Collider2D other)

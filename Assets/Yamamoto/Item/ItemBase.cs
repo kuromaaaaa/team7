@@ -9,10 +9,12 @@ public class ItemBase : MonoBehaviour, PauseManager.IPauseable
 
     private CircleCollider2D _collider;
     private bool _isPaused;
+    protected ViewFartGauge _viewFartGauge;
 
     private void Start()
     {
         _collider = GetComponent<CircleCollider2D>();
+        _viewFartGauge = FindAnyObjectByType<ViewFartGauge>().GetComponent<ViewFartGauge>();
     }
 
     protected virtual void Action(Collider2D other) { } // 効果が付与されたとき

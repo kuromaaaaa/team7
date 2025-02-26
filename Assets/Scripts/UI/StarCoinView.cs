@@ -12,7 +12,8 @@ public class StarCoinView : MonoBehaviour
 		{
 			if (!image.IsActive())
 			{
-				image.enabled = true;
+				Debug.Log("GetStarCoin");
+				image.gameObject.SetActive(true);
 				return;
 			}
 		}
