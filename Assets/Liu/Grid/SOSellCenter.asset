@@ -26,3 +26,4 @@ MonoBehaviour:
   - SellGOBJ: {fileID: 6006487962806905028, guid: 596c655f1608a6540bfd2f38242fc888, type: 3}
   - SellGOBJ: {fileID: 8101420749582878906, guid: 1719ce3ef477c684199080a9c460bc95, type: 3}
   - SellGOBJ: {fileID: 2989879410894601178, guid: 93bd2a21d7af7474b90aace6cb6cba13, type: 3}
+  - SellGOBJ: {fileID: 2989879410894601178, guid: 2e2f990580ba5e6448cb59818a1fa47a, type: 3}
