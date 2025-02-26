@@ -12,4 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 103e580751d44980a1a579467992a3a1, type: 3}
   m_Name: SoundDataAsset
   m_EditorClassIdentifier: 
-  _soundSetList: []
+  _soundSetList:
+  - _audioClipType: 0
+    _audioClip: {fileID: 8300000, guid: f1dd640a303ea6f4b8a5805e37674ecc, type: 3}
+  - _audioClipType: 1
+    _audioClip: {fileID: 8300000, guid: 6e06ed8f0072fe943a274816e60027a7, type: 3}
+  - _audioClipType: 2
+    _audioClip: {fileID: 8300000, guid: d4d552d884c9d944fa1589561ab23ad6, type: 3}
+  - _audioClipType: 3
+    _audioClip: {fileID: 8300000, guid: 8a28663d0c534b046812da61bda2b6de, type: 3}
+  - _audioClipType: 4
+    _audioClip: {fileID: 8300000, guid: 565f46bea8b830a459b700d1490a657e, type: 3}
+  - _audioClipType: 5
+    _audioClip: {fileID: 8300000, guid: 98034530740819f439dd081bb733feb9, type: 3}
+  - _audioClipType: 6
+    _audioClip: {fileID: 8300000, guid: 7fead8fcece32ec4597f6979621d242c, type: 3}
+  - _audioClipType: 7
+    _audioClip: {fileID: 8300000, guid: 81f77302c8ad88e4ab4a2a0c02307694, type: 3}
+  - _audioClipType: 8
+    _audioClip: {fileID: 8300000, guid: 42be584a56ba3ae459c019a56849d1b8, type: 3}
+  _soundPlayerParentObject: {fileID: 4330719173922325839, guid: a17298c3da7ccae40a9ed204e322367c, type: 3}
