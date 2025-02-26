@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 namespace DefaultNamespace
 {
-	public class PlayerMove : MonoBehaviour
+	public class SynchronizePlayer : MonoBehaviour
 	{
 
 		InputSystem_Actions _moveAction;

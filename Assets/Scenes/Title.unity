@@ -339,9 +339,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1927831110170446662}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: FadeAndLoadSceneAsyncButton
+      - m_Target: {fileID: 640693874}
+        m_TargetAssemblyTypeName: DefaultNamespace.bitsAndPieces, Assembly-CSharp
+        m_MethodName: SceneLoadButton
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -796,17 +796,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77868a5119026f543aedf319ef8a9c1a, type: 3}
---- !u!114 &1927831110170446662 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1217392954276539064, guid: 77868a5119026f543aedf319ef8a9c1a, type: 3}
-  m_PrefabInstance: {fileID: 1927831110170446661}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 583d3380a11093a4dbfb189d646d2cc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
