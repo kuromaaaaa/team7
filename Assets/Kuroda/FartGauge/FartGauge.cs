@@ -12,6 +12,7 @@ public class FartGauge
             if (value > 1f)
             {
                 _gaugeValue = 1f;
+                GaugeMax?.Invoke();
             }
             else
             {
@@ -23,5 +24,5 @@ public class FartGauge
     }
     
     public event Action OnGaugeChange;
-    
+    public event Action GaugeMax;
 }

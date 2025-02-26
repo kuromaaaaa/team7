@@ -1,17 +1,44 @@
-using System;
 using UnityEngine;
 
-public class FartManager : MonoBehaviour
+public class FartManager : MonoBehaviour ,PauseManager.IPauseable
 {
-    [SerializeField] private float fartParSecond;
+    [SerializeField,Header("ゲージ増加量割合(毎秒)")] private float fartParSecond;
     FartGauge _fartGauge = new FartGauge();
     public FartGauge FartGauge
     { get => _fartGauge; }
 
-    private void Start()
+    bool _isPaused = false;
+    
+    private void Awake()
     {
         FindAnyObjectByType<ViewFartGauge>().GaugeSet(_fartGauge);
     }
 
-    void Update() => _fartGauge.GaugeValue += fartParSecond * Time.deltaTime;
+    private void OnEnable()
+    {
+        PauseManager.Instance.Pause += Pause;
+        PauseManager.Instance.Resume += Resume;
+    }
+
+    private void OnDisable()
+    {
+        PauseManager.Instance.Pause -= Pause;
+        PauseManager.Instance.Resume -= Resume;
+    }
+
+    void Update()
+    {
+        if(!_isPaused)
+            _fartGauge.GaugeValue += fartParSecond * Time.deltaTime;
+    }
+
+    public void Pause()
+    {
+        _isPaused = true;
+    }
+
+    public void Resume()
+    {
+        _isPaused = false;
+    }
 }
