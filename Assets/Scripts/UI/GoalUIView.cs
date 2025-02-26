@@ -10,7 +10,7 @@ public class GoalUIView : MonoBehaviour
 	[SerializeField] private string _nextScene;
 
 
-	private async void GoalView()
+	public async void GoalView()
 	{
 		_text.gameObject.SetActive(true);
 		_text.rectTransform.position = new Vector2(3000, 540);
