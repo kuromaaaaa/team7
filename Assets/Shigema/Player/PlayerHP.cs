@@ -25,7 +25,7 @@ public class PlayerHP : MonoBehaviour, IDamageable
 
     public async void TakeDamage()
     {
-        Debug.LogError("toge");
+        AudioManager.SE.Play(AudioClipType.SE_Player_Die);
         FartGauge.Instance.FartStop = true;
         _currentHp -= _damageValue;
         // 死亡Anim➡初期位置に移動
