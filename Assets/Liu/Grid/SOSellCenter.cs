@@ -7,8 +7,6 @@ public class SOSellCenter : ScriptableObject
 {
     [SerializeField]
     public List<CellDataStruct> SellDataList;
-
-
 }
 
 [Serializable]

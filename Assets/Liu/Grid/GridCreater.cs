@@ -1,35 +1,48 @@
 using Cysharp.Threading.Tasks;
+using System;
+using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class GridCreater : MonoBehaviour
 {
+    public TextAsset csvFile;
 
     public SOSellCenter _sOSellCenter;
     public float _guildRange;
-    const int _weight = 10;
-    const int _hight = 10;
+
     public Transform _fielfTransform;
 
-    private int[][] _arrayArray = new int[_hight][]
+    private int[][] _arrayArray;
+
+    private int[][] LoadCSV(TextAsset csv)
     {
-        new int[_weight] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        new int[_weight] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        new int[_weight] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        new int[_weight] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        new int[_weight] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        new int[_weight] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        new int[_weight] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        new int[_weight] { 1, 1, 0, 0, 0, 0, 0, 0, 0, 0 },
-        new int[_weight] { 2, 2, 1, 1, 1, 1, 1, 1, 1, 1 },
-        new int[_weight] { 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 },
-    };
+        string[] lines = csv.text.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+        int[][] result = new int[lines.Length][];
+
+        for (int i = 0; i < lines.Length; i++)
+        {
+            result[i] = lines[i].Split(',').Select(int.Parse).ToArray();
+        }
+
+        return result;
+    }
+
+    private void PrintArray()
+    {
+        foreach (var row in _arrayArray)
+        {
+            Debug.Log(string.Join(",", row));
+        }
+    }
 
     private async void Start()
     {
+         _arrayArray = LoadCSV(csvFile);
         for (int y = _arrayArray.Length - 1; y >= 0; y--)
         {
             await UniTask.Delay(10);
-            float py = (_hight - y - 1) * _guildRange;
+            float py = (_arrayArray.Length - y - 1) * _guildRange;
 
             var array = _arrayArray[y];
             for (int x = 0; x < array.Length; x++)
@@ -45,6 +58,4 @@ public class NewMonoBehaviourScript : MonoBehaviour
             }
         }
     }
-
-
 }
