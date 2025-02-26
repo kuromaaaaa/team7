@@ -30,7 +30,7 @@ public class AudioManager
     public static AudioManager Instance => _instance;
     
     private const int AudioSourceCount = 2; // オーディオソースの数 SoundTypeCount
-    private const float DeafultVolume = 1.0f; // 初期音量
+    private const float DefaultVolume = 1.0f; // 初期音量
     private const string AudioSourcesContainerName = "AudioSourcesContainer";
     private SoundPlayer[] _player = new SoundPlayer[AudioSourceCount];
     private BGMPlayer _bgmPlayer;
@@ -63,7 +63,7 @@ public class AudioManager
         foreach (var player in _player)
         {
             player.Setup();
-            player.SetVolume(DeafultVolume);
+            player.SetVolume(DefaultVolume);
         }
     }
 

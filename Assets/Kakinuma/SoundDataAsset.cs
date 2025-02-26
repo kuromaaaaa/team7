@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SoundDataAsset", menuName = "ScriptableObjects/CreateSoundData")]
 public class SoundDataAsset : ScriptableObject
 {
-    private const string PATH = "SoundDataAsset";
+    private const string Path = "SoundDataAsset";
 
     private static SoundDataAsset _entity;
 
@@ -16,12 +16,12 @@ public class SoundDataAsset : ScriptableObject
             if (_entity == null)
             {
                 // 初アクセス時にロード
-                _entity = Resources.Load<SoundDataAsset>(PATH);
+                _entity = Resources.Load<SoundDataAsset>(Path);
 
                 // ロードできなかったとき
                 if (_entity == null)
                 {
-                    Debug.LogWarning($"{PATH}にSoundAssetDataが見つかりません");
+                    Debug.LogWarning($"{Path}にSoundAssetDataが見つかりません");
                 }
             }
             return _entity;
