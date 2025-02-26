@@ -4,8 +4,12 @@ public class FartManager : MonoBehaviour ,PauseManager.IPauseable
 {
     [SerializeField,Header("ゲージ増加量割合(毎秒)")] private float fartParSecond;
     FartGauge _fartGauge = new FartGauge();
+
     public FartGauge FartGauge
-    { get => _fartGauge; }
+    {
+        get => _fartGauge;
+        set => _fartGauge = value;
+    }
 
     bool _isPaused = false;
     
