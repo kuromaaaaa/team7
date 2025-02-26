@@ -7,11 +7,11 @@ public class UpdateItem : MonoBehaviour
     [SerializeField, Header("スプライトがあるオブジェクト")] private GameObject _obj;
     [SerializeField, Header("消えてから再度出現するまでの時間")] private int _time;
 
-    private BoxCollider2D _collider;
+    private CircleCollider2D _collider;
 
     private void Start()
     {
-        _collider = GetComponent<BoxCollider2D>();
+        _collider = GetComponent<CircleCollider2D>();
     }
 
     public async UniTask RespawnItem()
