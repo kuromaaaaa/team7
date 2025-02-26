@@ -20,27 +20,29 @@ public class BGMManager : MonoBehaviour
         }
     }
     
-    [SerializeField, Header("BGMの状態")] private AudioClipType _currentBGM = AudioClipType.BGM_Title;
+    [SerializeField, Header("次のBGM")] private AudioClipType _nextBGM = AudioClipType.BGM_Title;
+    [SerializeField, Header("現在のBGM")] private AudioClipType _currentBGM;
     [SerializeField, Header("BGMをフェードする場合にかける時間")] private float _duration;
     
-    /// <summary> 現在のBGM </summary>
-    public AudioClipType CurrentBGM
+    /// <summary> 次に再生するBGM シーンロード時に反映される </summary>
+    public AudioClipType NextBGM
     {
-        get => _currentBGM;
-        set
-        {
-            _currentBGM = value;
-            ChangeBGM(_currentBGM);
-        }
+        get => _nextBGM;
+        set => _nextBGM = value;
     }
 
     private void Start()
     {
         AudioManager.Initialize();
-        // ToDo:BGMが決まったら
-        //AudioManager.BGM.Play(_currentBGM, true);
+        SceneLoader.Instance.OnSceneLoaded += ChangeBGM;
+        AudioManager.BGM.Play(_currentBGM);
     }
-    
+
+    private void OnDestroy()
+    {
+        SceneLoader.Instance.OnSceneLoaded -= ChangeBGM;
+    }
+
     public void FadeBGM(float vol, float duration, bool flag = false, Ease easeType = Ease.Unset)
     {
         AudioManager.BGM.FadeVolume(vol, duration, flag, easeType);
@@ -48,10 +50,14 @@ public class BGMManager : MonoBehaviour
 
     /// <summary> BGMの変更 </summary>
     /// <param name="type"> AudioClipType 再生したいBGMの種類 </param>
-    public void ChangeBGM(AudioClipType type)
+    public void ChangeBGM()
     {
+        // 同じBGMなら変更しない
+        if (_currentBGM == _nextBGM) return;
+
         AudioManager.BGM.Stop();
-        AudioManager.BGM.Play(type, true);
+        AudioManager.BGM.Play(_nextBGM);
+        _currentBGM = _nextBGM;
     }
 
     /// <summary> BGMの音量設定 </summary>
