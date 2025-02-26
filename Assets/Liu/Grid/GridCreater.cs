@@ -41,14 +41,14 @@ public class GridCreater : MonoBehaviour
          _arrayArray = LoadCSV(csvFile);
         for (int y = _arrayArray.Length - 1; y >= 0; y--)
         {
-            await UniTask.Delay(10);
+            await UniTask.Delay(1);
             float py = (_arrayArray.Length - y - 1) * _guildRange;
 
             var array = _arrayArray[y];
             for (int x = 0; x < array.Length; x++)
             {
 
-                await UniTask.Delay(10);
+                await UniTask.Delay(1);
 
                 int targetGuildID = _arrayArray[y][x];
                 if (targetGuildID == 0) continue;

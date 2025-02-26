@@ -135,8 +135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   updateItem: {fileID: 356436413197578735}
-  _length: 10
-  _height: 10
+  _length: 15
+  _height: 14
 --- !u!114 &356436413197578735
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -136,7 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   updateItem: {fileID: 8961629694137866249}
   _length: 10
-  _scale: {x: 2, y: 2, z: 2}
+  _scale: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!114 &8961629694137866249
 MonoBehaviour:
   m_ObjectHideFlags: 0
