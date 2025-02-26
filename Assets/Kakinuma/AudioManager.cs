@@ -122,9 +122,22 @@ public class AudioManager
             }
         }
 
+        /// <summary> 停止 </summary>
         public virtual void Stop()
         {
             _audioSource.Stop();
+        }
+
+        /// <summary> 一時停止 </summary>
+        public virtual void Pause()
+        {
+            _audioSource.Pause();
+        }
+
+        /// <summary> 再開 </summary>
+        public virtual void Resume()
+        {
+            _audioSource.UnPause();
         }
     }
 
