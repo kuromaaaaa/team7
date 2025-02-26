@@ -30,7 +30,7 @@ public class AudioManager
     public static AudioManager Instance => _instance;
     
     private const int AudioSourceCount = 2; // オーディオソースの数 SoundTypeCount
-    private const float DefaultVolume = 1.0f; // 初期音量
+    private const float DefaultVolume = 0.03f; // 初期音量
     private const string AudioSourcesContainerName = "AudioSourcesContainer";
     private SoundPlayer[] _player = new SoundPlayer[AudioSourceCount];
     private BGMPlayer _bgmPlayer;
@@ -70,7 +70,7 @@ public class AudioManager
     public class SoundPlayer
     {
         private SoundType _type;
-        protected float _volume = 1.0f;
+        protected float _volume = DefaultVolume;
         protected float _pitch = 1.0f;
         protected AudioSource _audioSource;
 
@@ -96,6 +96,12 @@ public class AudioManager
         {
             _volume = volume;
             _audioSource.volume = _volume;
+        }
+
+        /// <summary> 音量を初期値に戻す </summary>
+        public virtual void ResetVolume()
+        {
+            _audioSource.volume = DefaultVolume;
         }
 
         /// <summary> プレイヤー毎のピッチ設定 </summary>
