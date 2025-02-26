@@ -7,6 +7,7 @@ public class GimmickSpike : MonoBehaviour
         if (other.gameObject.TryGetComponent<IDamageable>(out IDamageable dmg))
         {
             dmg.TakeDamage();
+            AudioManager.SE.Play(AudioClipType.SE_Gimmick_Needle);
         }
     }
 }

@@ -1,14 +1,19 @@
 using System;
+using System.Threading;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class LifeView : MonoBehaviour
 {
 	Image[] images = new Image[3];
+	private CancellationToken _token;
 
-	private void Start()
+	private async void Start()
 	{
+		_token = new CancellationTokenSource().Token;
 		images = gameObject.GetComponentsInChildren<Image>();
+		await UniTask.WaitUntil(() => FindAnyObjectByType<PlayerHP>() != null, PlayerLoopTiming.Update, _token);
 		PlayerHP playerHp = FindAnyObjectByType<PlayerHP>();
 		playerHp.TakeDamageAction += Life;
 	}

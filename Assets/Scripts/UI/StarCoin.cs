@@ -12,6 +12,8 @@ public class StarCoin : MonoBehaviour
 
 	public void GetCoin()
 	{
+		if(view == null)
+			view = FindAnyObjectByType<StarCoinView>();
 		view.GetStarCoin();
 	}
 }

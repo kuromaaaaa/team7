@@ -1,7 +1,7 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-public class JudgeGauge : MonoBehaviour
+public class MonitorFartGauge : MonoBehaviour
 {
     [SerializeField, Header("死亡Anim名")] private string _death = "Death";
 
@@ -14,7 +14,6 @@ public class JudgeGauge : MonoBehaviour
     private void Start()
     {
         FartGauge.Instance.GaugeMax += GameOver;
-        _animator = GameObject.FindWithTag("Player").gameObject.GetComponent<Animator>();
     }
 
     public bool Judge(float value)
@@ -33,6 +32,7 @@ public class JudgeGauge : MonoBehaviour
 
     private void GameOver()
     {
+        if(!_animator) _animator = GameObject.FindWithTag("Player").gameObject.GetComponent<Animator>();
         ToGameOver().Forget();
     }
 
