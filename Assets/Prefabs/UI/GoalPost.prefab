@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 7877244504588030755}
-  _nextScene: Title
+  _nextScene: Ending
 --- !u!1 &6448309091478750929
 GameObject:
   m_ObjectHideFlags: 0
