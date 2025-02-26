@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -10,18 +11,28 @@ public class ItemBase : MonoBehaviour, PauseManager.IPauseable
     private CircleCollider2D _collider;
     private bool _isPaused;
     protected ViewFartGauge _viewFartGauge;
+    private CancellationTokenSource _tokenSource;
 
     private void Start()
     {
         _collider = GetComponent<CircleCollider2D>();
         _viewFartGauge = FindAnyObjectByType<ViewFartGauge>().GetComponent<ViewFartGauge>();
+        _tokenSource = new CancellationTokenSource();
+    }
+
+    private void OnDestroy()
+    {
+        _tokenSource?.Cancel();
+        _tokenSource?.Dispose();
     }
 
     protected virtual void Action(Collider2D other) { } // 効果が付与されたとき
 
     private async UniTask Destroy(Collider2D other)
     {
-        var tokenSource = new CancellationTokenSource();
+        _tokenSource?.Cancel();
+        _tokenSource?.Dispose();
+        _tokenSource = new CancellationTokenSource();
         float elapsed = 0f;
         float duration = _length;
         while (elapsed < duration)
@@ -30,12 +41,10 @@ public class ItemBase : MonoBehaviour, PauseManager.IPauseable
             {
                 elapsed += Time.deltaTime;
             }
-            await UniTask.Yield(PlayerLoopTiming.Update, cancellationToken: tokenSource.Token);
+            await UniTask.Yield(PlayerLoopTiming.Update, cancellationToken: _tokenSource.Token);
         }
         // await UniTask.Delay( _length * 1000, cancellationToken: tokenSource.Token);
         EndAction(other);
-        tokenSource.Cancel();
-        tokenSource.Dispose();
     }
     
     protected virtual void EndAction(Collider2D other) { } // 効果時間が終わったとき

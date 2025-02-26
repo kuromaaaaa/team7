@@ -9,15 +9,25 @@ public class UpdateItem : MonoBehaviour, PauseManager.IPauseable
 
     private CircleCollider2D _collider;
     private bool _isPaused;
+    private CancellationTokenSource _tokenSource;
 
     private void Start()
     {
         _collider = GetComponent<CircleCollider2D>();
+        _tokenSource = new CancellationTokenSource();
+    }
+    
+    private void OnDestroy()
+    {
+        _tokenSource?.Cancel();
+        _tokenSource?.Dispose();
     }
 
     public async UniTask RespawnItem()
     {
-        var tokenSource = new CancellationTokenSource();
+        _tokenSource?.Cancel();
+        _tokenSource?.Dispose();
+        _tokenSource = new CancellationTokenSource();
         // await UniTask.Delay(_time * 1000, cancellationToken: tokenSource.Token);
         float elapsed = 0f;
         float duration = _time;
@@ -28,12 +38,10 @@ public class UpdateItem : MonoBehaviour, PauseManager.IPauseable
             {
                 elapsed += Time.deltaTime;
             }
-            await UniTask.Yield(PlayerLoopTiming.Update, cancellationToken: tokenSource.Token);
+            await UniTask.Yield(PlayerLoopTiming.Update, cancellationToken: _tokenSource.Token);
         }
         _collider.enabled = true;
         _obj.SetActive(true);
-        tokenSource.Cancel();
-        tokenSource.Dispose();
     }
 
     public void EnableItem()
