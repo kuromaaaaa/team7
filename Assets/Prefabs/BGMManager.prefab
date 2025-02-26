@@ -44,5 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d61dad6e2bad7c4691fe15bcf61998a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nextBGM: 0
   _currentBGM: 0
   _duration: 0
+  _startVolume: 0.3
+  _inGameVolume: 0.05
+  _gameOverVolume: 0.3
+  _endingVolume: 0.3

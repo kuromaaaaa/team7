@@ -9,10 +9,10 @@ public class BGMManager : SingletonMonoBehavior<BGMManager>
     [SerializeField, Header("BGMをフェードする場合にかける時間")] private float _duration;
 
     [Header("BGM毎の音量")]
-    [SerializeField, Header("スタート")] private float _startVolume = 0.5f;
-    [SerializeField, Header("インゲーム")] private float _inGameVolume = 0.2f;
-    [SerializeField, Header("ゲームオーバー")] private float _gameOverVolume = 0.5f;
-    [SerializeField, Header("エンディング")] private float _endingVolume = 0.5f;
+    [SerializeField, Header("スタート")] private float _startVolume = 0.3f;
+    [SerializeField, Header("インゲーム")] private float _inGameVolume = 0.05f;
+    [SerializeField, Header("ゲームオーバー")] private float _gameOverVolume = 0.3f;
+    [SerializeField, Header("エンディング")] private float _endingVolume = 0.3f;
     
     /// <summary> 次に再生するBGM シーンロード時に反映される </summary>
     public AudioClipType NextBGM
@@ -29,7 +29,7 @@ public class BGMManager : SingletonMonoBehavior<BGMManager>
         AudioManager.BGM.Play(_currentBGM);
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         SceneLoader.Instance.OnSceneLoaded -= ChangeBGM;
     }
