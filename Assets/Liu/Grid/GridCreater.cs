@@ -54,7 +54,11 @@ public class GridCreater : MonoBehaviour
                 if (targetGuildID == 0) continue;
                 var sell = Instantiate(_sOSellCenter.SellDataList[targetGuildID].SellGOBJ, _fielfTransform);
                 sell.transform.position = new Vector2(x * _guildRange, py);
-                sell.name = $"{x}:{py}";
+                if(targetGuildID != 7)
+                {
+                    sell.name = $"{x}:{py}";
+                }
+                    
             }
         }
     }
