@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class FarEffect : MonoBehaviour
 {
-    [SerializeField, Header("パーティクルシステム")] private ParticleSystem _fart;
-
+    [SerializeField, Header("パーティクルシステム")] private GameObject _fart;
+    [SerializeField, Header("おなら出る場所")] private Transform _muzzle;
     private void Start()
     {
         if (_fart == null)
@@ -17,6 +17,11 @@ public class FarEffect : MonoBehaviour
     /// </summary>
     public void FartEffect()
     {
-        if (_fart) _fart.Play();
+        if (_fart)
+        {
+            GameObject fart = Instantiate(_fart);
+            fart.transform.position = _muzzle.position;
+            fart.transform.rotation = _muzzle.rotation;
+        }
     }
 }
