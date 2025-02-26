@@ -16,6 +16,7 @@ public class Potato : ItemBase
         _originalLinearDamping = rb.linearDamping;
         rb.gravityScale = 0; // 重力をなくす
         rb.linearDamping = _value;
+        _viewFartGauge.GaugeColorChange(new Color(186, 0, 255), _length);
     }
     
     protected override void EndAction(Collider2D other)
