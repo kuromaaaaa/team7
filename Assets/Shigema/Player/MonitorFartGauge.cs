@@ -1,7 +1,7 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-public class JudgeGauge : MonoBehaviour
+public class MonitorFartGauge : MonoBehaviour
 {
     [SerializeField, Header("死亡Anim名")] private string _death = "Death";
 

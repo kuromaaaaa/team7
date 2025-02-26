@@ -3,7 +3,7 @@ using UnityEngine;
 /// <summary>
 /// 真になる条件）通常：地面設置時／無重力：一定時間内継続
 /// </summary>
-public class Move : MonoBehaviour
+public class Move : MonoBehaviour, PauseManager.IPauseable
 {
     [SerializeField, Header("強さ")] private float _power = 5f;
     [SerializeField] private KeyCode _jumpKey = KeyCode.Space;
@@ -15,14 +15,16 @@ public class Move : MonoBehaviour
     private bool _canJump = true;
     private float _defaultPower;
     private bool _isZeroGravity;
-    private JudgeGauge _judgeGauge;
+    private MonitorFartGauge _monitorFartGauge;
     [SerializeField] private bool _isDebug;
+    private Vector2 _savedVelocity;
+    private float _savedAngularVelocity;
 
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _defaultPower = _power;
-        _judgeGauge = GameObject.Find("JudgeGauge").gameObject.GetComponent<JudgeGauge>();
+        _monitorFartGauge = GameObject.Find("JudgeGauge").gameObject.GetComponent<MonitorFartGauge>();
     }
 
     private void Update()
@@ -37,7 +39,7 @@ public class Move : MonoBehaviour
         {
             if (Input.GetKeyDown(_jumpKey) && _canJump)
             {
-                // AudioManager.SE.Play(AudioClipType.SE_Player_Jump);
+                AudioManager.SE.Play(AudioClipType.SE_Player_Jump);
                 if (!_isZeroGravity) _canJump = false;
                 Vector2 velocity = _rigidbody2D.linearVelocity;
                 velocity += (Vector2)transform.up * _power;
@@ -45,7 +47,7 @@ public class Move : MonoBehaviour
             }
         }
 
-        else if (Input.GetKeyDown(_jumpKey) && _canJump && _judgeGauge.Judge(_fartConsumption))
+        else if (Input.GetKeyDown(_jumpKey) && _canJump && _monitorFartGauge.Judge(_fartConsumption))
         {
             AudioManager.SE.Play(AudioClipType.SE_Player_Jump);
             if (!_isZeroGravity) _canJump = false;
@@ -73,5 +75,22 @@ public class Move : MonoBehaviour
     {
         _isZeroGravity = flag;
         _canJump = flag;
+    }
+
+    // 一時停止
+    public void Pause()
+    {
+        _savedVelocity = _rigidbody2D.linearVelocity;
+        _savedAngularVelocity = _rigidbody2D.angularVelocity;
+
+        _rigidbody2D.linearVelocity = Vector2.zero;
+        _rigidbody2D.angularVelocity = 0f;
+    }
+
+    // 再開
+    public void Resume()
+    {
+        _rigidbody2D.linearVelocity = _savedVelocity;
+        _rigidbody2D.angularVelocity = _savedAngularVelocity;
     }
 }
