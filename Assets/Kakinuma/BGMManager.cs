@@ -66,4 +66,22 @@ public class BGMManager : MonoBehaviour
     {
         AudioManager.BGM.SetVolume(vol);
     }
+
+    /// <summary> BGMの停止 </summary>
+    public void StopBGM()
+    {
+        AudioManager.BGM.Stop();
+    }
+    
+    /// <summary> BGMの一時停止 </summary>
+    public void PauseBGM()
+    {
+        AudioManager.BGM.Pause();
+    }
+    
+    /// <summary> BGMの再開/// </summary>
+    public void ResumeBGM()
+    {
+        AudioManager.BGM.Resume();
+    }
 }
