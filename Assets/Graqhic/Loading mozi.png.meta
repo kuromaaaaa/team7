@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Loading mozi_0: -5516822884846323869
+      Loading mozi_1: 5426653062775611853
+      Loading mozi_2: -8312171614896582477
+      Loading mozi_3: -8780839562931170168
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
