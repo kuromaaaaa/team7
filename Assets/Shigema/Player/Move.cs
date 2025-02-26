@@ -8,7 +8,8 @@ public class Move : MonoBehaviour, PauseManager.IPauseable
     [SerializeField, Header("強さ")] private float _power = 5f;
     [SerializeField] private KeyCode _jumpKey = KeyCode.Space;
 
-    [Range(0, 1)] [SerializeField, Header("おならの消費量")]
+    [Range(0, 1)]
+    [SerializeField, Header("おならの消費量")]
     private float _fartConsumption = 0.2f;
 
     private Rigidbody2D _rigidbody2D;
@@ -46,6 +47,7 @@ public class Move : MonoBehaviour, PauseManager.IPauseable
                 _rigidbody2D.linearVelocity = velocity;
             }
         }
+
 
         else if (Input.GetKeyDown(_jumpKey) && _canJump && _monitorFartGauge.Judge(_fartConsumption))
         {
