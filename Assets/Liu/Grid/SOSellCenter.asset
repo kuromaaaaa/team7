@@ -13,15 +13,14 @@ MonoBehaviour:
   m_Name: SOSellCenter
   m_EditorClassIdentifier: 
   SellDataList:
+  - SellGOBJ: {fileID: 2989879410894601178, guid: cf8e856970cb9e448af90c4592b1830b, type: 3}
   - SellGOBJ: {fileID: 2989879410894601178, guid: 653a57c4c1b74f548a8343834cb7773b, type: 3}
-  - SellGOBJ: {fileID: 2989879410894601178, guid: 653a57c4c1b74f548a8343834cb7773b, type: 3}
   - SellGOBJ: {fileID: 2989879410894601178, guid: cf8e856970cb9e448af90c4592b1830b, type: 3}
-  - SellGOBJ: {fileID: 2989879410894601178, guid: cf8e856970cb9e448af90c4592b1830b, type: 3}
-  - SellGOBJ: {fileID: 2989879410894601178, guid: cf8e856970cb9e448af90c4592b1830b, type: 3}
-  - SellGOBJ: {fileID: 2989879410894601178, guid: cf8e856970cb9e448af90c4592b1830b, type: 3}
-  - SellGOBJ: {fileID: 2989879410894601178, guid: cf8e856970cb9e448af90c4592b1830b, type: 3}
-  - SellGOBJ: {fileID: 8562919650175882847, guid: 14d25d639397c0b46a8e13e2b526f9cf, type: 3}
-  - SellGOBJ: {fileID: 2989879410894601178, guid: cf8e856970cb9e448af90c4592b1830b, type: 3}
-  - SellGOBJ: {fileID: 2989879410894601178, guid: cf8e856970cb9e448af90c4592b1830b, type: 3}
-  - SellGOBJ: {fileID: 2989879410894601178, guid: cf8e856970cb9e448af90c4592b1830b, type: 3}
+  - SellGOBJ: {fileID: 2989879410894601178, guid: 2e2f990580ba5e6448cb59818a1fa47a, type: 3}
+  - SellGOBJ: {fileID: 2365114074674616591, guid: 50306be63552f754cb59c3a674baf217, type: 3}
+  - SellGOBJ: {fileID: 4065840388014631518, guid: f337d48bc976b4047ba5c89b7ff308bc, type: 3}
+  - SellGOBJ: {fileID: 3774904687034074110, guid: 66343a7268f179940b42e4bf1a756b06, type: 3}
+  - SellGOBJ: {fileID: 1795288032670170903, guid: 3f4326b540ab7974d904af0b18137715, type: 3}
+  - SellGOBJ: {fileID: 9215493173683114467, guid: 25390b6904a68844fb1b3e08757d474a, type: 3}
+  - SellGOBJ: {fileID: 2989879410894601178, guid: 960f07bc4c61fb94aae2862d581bf2b9, type: 3}
   - SellGOBJ: {fileID: 2989879410894601178, guid: cf8e856970cb9e448af90c4592b1830b, type: 3}
