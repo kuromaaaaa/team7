@@ -23,6 +23,7 @@ public class BGMManager : MonoBehaviour
     [SerializeField, Header("BGMの状態")] private AudioClipType _currentBGM = AudioClipType.BGM_Title;
     [SerializeField, Header("BGMをフェードする場合にかける時間")] private float _duration;
     
+    /// <summary> 現在のBGM </summary>
     public AudioClipType CurrentBGM
     {
         get => _currentBGM;
@@ -44,9 +45,18 @@ public class BGMManager : MonoBehaviour
         AudioManager.BGM.FadeVolume(vol, duration, flag, easeType);
     }
 
+    /// <summary> BGMの変更 </summary>
+    /// <param name="type"> AudioClipType 再生したいBGMの種類 </param>
     public void ChangeBGM(AudioClipType type)
     {
         AudioManager.BGM.Stop();
         AudioManager.BGM.Play(type, true);
+    }
+
+    /// <summary> BGMの音量設定 </summary>
+    /// <param name="vol"> float 音量 </param>
+    public void SetVolume(float vol)
+    {
+        AudioManager.BGM.SetVolume(vol);
     }
 }
