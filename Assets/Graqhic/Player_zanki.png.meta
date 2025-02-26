@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Player_zanki_0: 618098888033062684
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
