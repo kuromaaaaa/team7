@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using DG.Tweening;
 using UnityEngine;
 
@@ -23,6 +24,12 @@ public class BGMManager : MonoBehaviour
     [SerializeField, Header("次のBGM")] private AudioClipType _nextBGM = AudioClipType.BGM_Title;
     [SerializeField, Header("現在のBGM")] private AudioClipType _currentBGM;
     [SerializeField, Header("BGMをフェードする場合にかける時間")] private float _duration;
+
+    [Header("BGM毎の音量")]
+    [SerializeField, Header("スタート")] private float _startVolume = 0.5f;
+    [SerializeField, Header("インゲーム")] private float _inGameVolume = 0.2f;
+    [SerializeField, Header("ゲームオーバー")] private float _gameOverVolume = 0.5f;
+    [SerializeField, Header("エンディング")] private float _endingVolume = 0.5f;
     
     /// <summary> 次に再生するBGM シーンロード時に反映される </summary>
     public AudioClipType NextBGM
@@ -35,6 +42,7 @@ public class BGMManager : MonoBehaviour
     {
         AudioManager.Initialize();
         SceneLoader.Instance.OnSceneLoaded += ChangeBGM;
+        AudioManager.BGM.SetVolume(_startVolume);
         AudioManager.BGM.Play(_currentBGM);
     }
 
@@ -55,8 +63,28 @@ public class BGMManager : MonoBehaviour
         // 同じBGMなら変更しない
         if (_currentBGM == _nextBGM) return;
 
+        var loopFlag = true;
+
+        // 音量設定
+        switch (_nextBGM)
+        {
+            case AudioClipType.BGM_Title:
+                AudioManager.BGM.SetVolume(_startVolume);
+                break;
+            case AudioClipType.BGM_Stage:
+                AudioManager.BGM.SetVolume(_inGameVolume);
+                break;
+            case AudioClipType.BGM_GameOver:
+                AudioManager.BGM.SetVolume(_gameOverVolume);
+                loopFlag = false;
+                break;
+            case AudioClipType.BGM_Ending:
+                AudioManager.BGM.SetVolume(_endingVolume);
+                break;
+        }
+        
         AudioManager.BGM.Stop();
-        AudioManager.BGM.Play(_nextBGM);
+        AudioManager.BGM.Play(_nextBGM, loopFlag);
         _currentBGM = _nextBGM;
     }
 
