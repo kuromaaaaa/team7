@@ -14,8 +14,7 @@ public abstract class SceneSingletonMonoBehavior<T> : MonoBehaviour where T : Sc
 
                 if (_instance == null)
                 {
-                    GameObject singletonObject = new GameObject(typeof(T).Name);
-                    _instance = singletonObject.AddComponent<T>();
+                    Debug.LogError("Instanceされたオブジェクトがないです");
                 }
             }
 
