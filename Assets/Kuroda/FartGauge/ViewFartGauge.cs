@@ -1,15 +1,19 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ViewFartGauge : MonoBehaviour
 {
     [SerializeField] Image image;
+
+    private FartGauge _gauge;
+    public void GaugeSet(FartGauge f) => _gauge = f;
     private void OnEnable()
     {
-        FartGauge.Instance.OnGaugeChange += UpdateView;
+        _gauge.OnGaugeChange += UpdateView;
     }
     private async void UpdateView()
     {
-        image.fillAmount = FartGauge.Instance.GaugeValue;
+        image.fillAmount = _gauge.GaugeValue;
     }
 }

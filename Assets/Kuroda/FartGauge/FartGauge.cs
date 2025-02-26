@@ -1,6 +1,6 @@
 using System;
 
-public class FartGauge : SceneSingletonMonoBehavior<FartGauge>
+public class FartGauge
 {
     
     private float _gaugeValue;
