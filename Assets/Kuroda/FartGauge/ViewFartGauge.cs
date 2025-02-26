@@ -12,7 +12,7 @@ public class ViewFartGauge : MonoBehaviour
     Tween _flashingTween;
     Color _originalColor;
 
-    private const float MaxGaugeSize = 0.8f;
+    private const float MaxGaugeSize = 0.78f;
     private const float FlashingDuration = 1f / 4;
     private const float FlashingTimer = 0.2f;
     private void OnEnable()
