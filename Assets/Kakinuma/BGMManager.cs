@@ -36,6 +36,7 @@ public class BGMManager : MonoBehaviour
 
     private void Start()
     {
+        AudioManager.Initialize();
         // ToDo:BGMが決まったら
         //AudioManager.BGM.Play(_currentBGM, true);
     }
