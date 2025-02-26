@@ -14,6 +14,13 @@ public class FartManager : MonoBehaviour ,PauseManager.IPauseable
 
     private void OnDisable()
     {
+        Unsubscribe();
+    }
+
+    void Unsubscribe()
+    {
+        if (PauseManager.Instance == null)
+            return;
         PauseManager.Instance.Pause -= Pause;
         PauseManager.Instance.Resume -= Resume;
     }
