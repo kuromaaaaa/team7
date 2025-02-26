@@ -11,7 +11,8 @@ public class ViewFartGauge : MonoBehaviour
     CancellationTokenSource _cts;
     Tween _flashingTween;
     Color _originalColor;
-    
+
+    private const float MaxGaugeSize = 0.8f;
     private const float FlashingDuration = 1f / 4;
     private const float FlashingTimer = 0.2f;
     private void OnEnable()
@@ -37,7 +38,7 @@ public class ViewFartGauge : MonoBehaviour
     
     private async void UpdateView()
     {
-        _fillImage.fillAmount = FartGauge.Instance.GaugeValue;
+        _fillImage.fillAmount = FartGauge.Instance.GaugeValue * MaxGaugeSize;
     }
 
     public async void GaugeColorChange(Color color, float duration)
