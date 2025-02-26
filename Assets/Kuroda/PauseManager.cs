@@ -12,7 +12,7 @@ public class PauseManager : SceneSingletonMonoBehavior<PauseManager>
         get => paused;
         set
         {
-            (value ? Pause : Resume).Invoke();
+            (value ? Pause : Resume)?.Invoke();
             paused = value;
         }
     }
