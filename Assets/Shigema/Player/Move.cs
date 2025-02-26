@@ -9,8 +9,7 @@ public class Move : MonoBehaviour, PauseManager.IPauseable
     [SerializeField, Header("強さ")] private float _power = 5f;
     [SerializeField] private KeyCode _jumpKey = KeyCode.Space;
 
-    [Range(0, 1)]
-    [SerializeField, Header("おならの消費量")]
+    [Range(0, 1)] [SerializeField, Header("おならの消費量")]
     private float _fartConsumption = 0.2f;
 
     private Rigidbody2D _rigidbody2D;
@@ -21,6 +20,7 @@ public class Move : MonoBehaviour, PauseManager.IPauseable
     [SerializeField] private bool _isDebug;
     private Vector2 _savedVelocity;
     private float _savedAngularVelocity;
+    [SerializeField] private Animator _animator;
 
     private void Start()
     {
@@ -33,7 +33,7 @@ public class Move : MonoBehaviour, PauseManager.IPauseable
     private async void TryAddToDB()
     {
         await UniTask.Delay(10);
-        if(FartGauge.Instance != null)
+        if (FartGauge.Instance != null)
         {
             FartGauge.Instance.Player = gameObject;
         }
@@ -55,6 +55,7 @@ public class Move : MonoBehaviour, PauseManager.IPauseable
         {
             if (Input.GetKeyDown(_jumpKey) && _canJump)
             {
+                _animator.SetTrigger("Jump");
                 AudioManager.SE.Play(AudioClipType.SE_Player_Jump);
                 if (!_isZeroGravity) _canJump = false;
                 Vector2 velocity = _rigidbody2D.linearVelocity;
@@ -62,10 +63,9 @@ public class Move : MonoBehaviour, PauseManager.IPauseable
                 _rigidbody2D.linearVelocity = velocity;
             }
         }
-
-
         else if (Input.GetKeyDown(_jumpKey) && _canJump && _monitorFartGauge.Judge(_fartConsumption))
         {
+            _animator.SetTrigger("Jump");
             AudioManager.SE.Play(AudioClipType.SE_Player_Jump);
             if (!_isZeroGravity) _canJump = false;
             Vector2 velocity = _rigidbody2D.linearVelocity;
