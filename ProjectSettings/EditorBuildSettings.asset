@@ -21,13 +21,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Opening.unity
     guid: 5a0d7fcff2b2cfa4fb365d95b6ecca75
   - enabled: 1
-    path: Assets/Kenji/Stage3.unity
+    path: Assets/Kenji/Stages/Stage3.unity
     guid: e63533b23d072774493e0565a660c159
   - enabled: 1
-    path: Assets/Kenji/Stage1.unity
+    path: Assets/Kenji/Stages/Stage1.unity
     guid: a7b86ca1f96480e488e89342507eda72
   - enabled: 1
-    path: Assets/Kenji/Stage2.unity
+    path: Assets/Kenji/Stages/Stage2.unity
     guid: a522a14569fece34b94da96f95bc05ba
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
