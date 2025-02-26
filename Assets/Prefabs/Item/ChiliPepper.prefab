@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6848212948888851295}
   - component: {fileID: 1932274147331933831}
   - component: {fileID: 7067405047407762052}
-  - component: {fileID: 2758937722907281064}
+  - component: {fileID: 6968869244643903895}
   m_Layer: 7
   m_Name: ChiliPepper
   m_TagString: Item
@@ -64,8 +64,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _obj: {fileID: 4237499488615200437}
   _time: 10
---- !u!61 &2758937722907281064
-BoxCollider2D:
+--- !u!58 &6968869244643903895
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -98,18 +98,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Offset: {x: -0.0060090423, y: -0.04406646}
+  m_Radius: 0.46995482
 --- !u!1 &4237499488615200437
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,7 +176,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -7794329031812480714, guid: f83104056291c43479af031a1fe5a1a8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
