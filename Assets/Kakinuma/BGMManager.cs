@@ -25,7 +25,22 @@ public class BGMManager : SingletonMonoBehavior<BGMManager>
     {
         AudioManager.Initialize();
         SceneLoader.Instance.OnSceneLoaded += ChangeBGM;
-        AudioManager.BGM.SetVolume(_startVolume);
+        switch (_currentBGM)
+        {
+            case AudioClipType.BGM_Title:
+                AudioManager.BGM.SetVolume(_startVolume);
+                break;
+            case AudioClipType.BGM_Stage:
+                AudioManager.BGM.SetVolume(_inGameVolume);
+                break;
+            case AudioClipType.BGM_GameOver:
+                AudioManager.BGM.SetVolume(_gameOverVolume);
+                break;
+            case AudioClipType.BGM_Ending:
+                AudioManager.BGM.SetVolume(_endingVolume);
+                break;
+        }
+
         AudioManager.BGM.Play(_currentBGM);
     }
 
