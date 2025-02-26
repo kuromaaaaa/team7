@@ -14,7 +14,6 @@ public class MonitorFartGauge : MonoBehaviour
     private void Start()
     {
         FartGauge.Instance.GaugeMax += GameOver;
-        _animator = GameObject.FindWithTag("Player").gameObject.GetComponent<Animator>();
     }
 
     public bool Judge(float value)
@@ -33,6 +32,7 @@ public class MonitorFartGauge : MonoBehaviour
 
     private void GameOver()
     {
+        _animator = GameObject.FindWithTag("Player").gameObject.GetComponent<Animator>();
         ToGameOver().Forget();
     }
 
