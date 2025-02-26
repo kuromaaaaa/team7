@@ -5,16 +5,17 @@ public class FartGauge : SceneSingletonMonoBehavior<FartGauge>
 {
     
     private float _gaugeValue;
-
+    private bool _isGameOver = false;
+    
     public GameObject Player;
     
     public float GaugeValue
     {
         set
         {
-            if (value > 1f)
+            if (value > 1f && !_isGameOver)
             {
-                _gaugeValue = 1f;
+                _isGameOver = true;
                 GaugeMax?.Invoke();
             }
             else
