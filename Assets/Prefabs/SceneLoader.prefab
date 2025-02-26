@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7092096060390188199}
   - component: {fileID: 7042556824233250668}
   - component: {fileID: 6484173582531942912}
+  - component: {fileID: 8272484682789032248}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -60,7 +61,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 144
   m_TargetDisplay: 0
 --- !u!114 &7042556824233250668
 MonoBehaviour:
@@ -102,6 +103,21 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8272484682789032248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256408790167097392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faaba215e6d241842a562e1bbe61c755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _panelImage: {fileID: 5864878143002445131}
+  _loadText: {fileID: 3524263685468854549}
+  _loadImage: {fileID: 2473272482417535439}
 --- !u!1 &4416861794808781292
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,9 +171,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2439565521287817612}
     m_Modifications:
+    - target: {fileID: 630874080113901548, guid: 96c35278a1c53fe41b6874e839cdd8c6, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635109949845324942, guid: 96c35278a1c53fe41b6874e839cdd8c6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5314785318042578883, guid: 96c35278a1c53fe41b6874e839cdd8c6, type: 3}
       propertyPath: m_Name
       value: FadePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5314785318042578883, guid: 96c35278a1c53fe41b6874e839cdd8c6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171977106430091079, guid: 96c35278a1c53fe41b6874e839cdd8c6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8378876960829940834, guid: 96c35278a1c53fe41b6874e839cdd8c6, type: 3}
       propertyPath: m_Pivot.x
@@ -244,8 +276,41 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96c35278a1c53fe41b6874e839cdd8c6, type: 3}
+--- !u!114 &2473272482417535439 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8932818404924150632, guid: 96c35278a1c53fe41b6874e839cdd8c6, type: 3}
+  m_PrefabInstance: {fileID: 6459687141137824423}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &3306393132615376581 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8378876960829940834, guid: 96c35278a1c53fe41b6874e839cdd8c6, type: 3}
   m_PrefabInstance: {fileID: 6459687141137824423}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3524263685468854549 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7587958564451492786, guid: 96c35278a1c53fe41b6874e839cdd8c6, type: 3}
+  m_PrefabInstance: {fileID: 6459687141137824423}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5864878143002445131 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 630874080113901548, guid: 96c35278a1c53fe41b6874e839cdd8c6, type: 3}
+  m_PrefabInstance: {fileID: 6459687141137824423}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
